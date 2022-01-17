@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .forms import ContatoForm
 
 #página inicial
 def index(request):
@@ -8,7 +8,11 @@ def index(request):
 
 #página de contato
 def contato(request):
-    return render(request, 'contato.html')
+    form = ContatoForm()
+    context = {
+        'form': form
+    }
+    return render(request, 'contato.html', context)
 
 
 #página de cadastro de produtos
