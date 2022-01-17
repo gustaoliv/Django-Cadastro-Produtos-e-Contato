@@ -14,6 +14,7 @@ class ContatoForm(forms.Form):
         mensagem = self.cleaned_data['mensagem']
 
         conteudo = f'Nome: {nome}\nEmail: {email}\nAssunto: {assunto}\nMensagem: {mensagem}'
+        
         mail = EmailMessage(
             subject = 'E-mail enviado pelo sistema django2',
             body = conteudo,
