@@ -1001,9 +1001,19 @@ button:focus {
   position: relative;
 }
 
+.video-promo-contato {
+  background: url(../images/header-contato.jpg);
+  position: relative;
+}
+
 .video-promo .video-promo-content {
   color: #fff;
 }
+
+.video-promo-contato .video-promo-contato-content {
+  color: #fff;
+}
+
 
 .video-promo .video-promo-content .video-popup {
   width: 80px;
@@ -1027,6 +1037,19 @@ button:focus {
 .video-promo .video-promo-content p {
   color: #fff;
 }
+
+
+.video-promo-contato .video-promo-contato-content h2 {
+  margin-top: 30px;
+  color: #fff;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.video-promo-contato .video-promo-contato-content p {
+  color: #fff;
+}
+
 
 /* ==========================================================================
    Portfolio Section
@@ -1453,13 +1476,13 @@ button:focus {
   transition: 0.5s;
 }
 
-.single-team .social-list .facebook a:hover {
-  background: #4867aa;
+.single-team .social-list .github a:hover {
+  background: #333;
   color: #fff;
 }
 
-.single-team .social-list .twitter a:hover {
-  background: #1da1f2;
+.single-team .social-list .instagram a:hover {
+  background: #dd2a7b;
   color: #fff;
 }
 
