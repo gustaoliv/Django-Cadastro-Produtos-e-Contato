@@ -1,29 +1,96 @@
 {% load bootstrap4 %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    
+    <!--====== Required meta tags ======-->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+
+    
     <meta charset="UTF-8">
     <title>Contato</title>
     {% bootstrap_css %}
+
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/png">
+
+     <!--====== Bootstrap css ======-->
+     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+     <!--====== Line Icons css ======-->
+     <link rel="stylesheet" href="{% static 'css/LineIcons.css' %}">
+ 
+     <!--====== Magnific Popup css ======-->
+     <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+ 
+     <!--====== Slick css ======-->
+     <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+ 
+     <!--====== Animate css ======-->
+     <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+ 
+     <!--====== Default css ======-->
+     <link rel="stylesheet" href="{% static 'css/default.css' %}">
+ 
+     <!--====== Style css ======-->
+     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
 </head>
 
 <body>
-    <div class="container">
-        <center>
-            <h1>Formulário de Contato</h1>
-        </center>
-        {% bootstrap_messages %}
-        <form action="{% url 'contato' %}" method="post" class="form" autocomplete="off">
-            <!-- Token de segurança -->
-            {% csrf_token %}
-            <!-- Aplica o CSS no form do Django -->
-            {% bootstrap_form form %}
-            <!-- Botão -->
-            {% buttons %}
-                <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
-            {% endbuttons %}
-        </form>
-    </div>
+    <section id="contact" class="contact-area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section-title text-center pb-20">
+                        <h3 class="title">Entre em contato</h3>
+                        <p class="text">Caso tenha alguma dúvida sobre os produtos ou queira atendimento, preencha o formulário abaixo que entraremos em contato</p>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="contact-two mt-50 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.2s">
+                        <h4 class="contact-title">Vamos falar sobre o projeto</h4>
+                        <p class="text">Este é uma simples aplicação construída em Django, está página é um formulário de contato com envio automático de e-mails.</p>
+                        <ul class="contact-info">
+                            <li><i class="lni-money-location"></i> Montes Claros - MG, Brasil</li>
+                            <li><i class="lni-phone-handset"></i> +55 38 9 99127-7179</li>
+                            <li><i class="lni-envelope"></i> gusta.oliv4@gmail.com</li>
+                        </ul>
+                    </div> <!-- contact two -->
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-form form-style-one mt-35 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.5s">
+                        <form  id="contact-form" action="{% url 'contato' %}" method="post">
+                            <!-- Token de segurança -->
+                            {% csrf_token %}
+                            <!-- Aplica o CSS no form do Django -->
+                            {% bootstrap_form form %}
+                            <!-- Botão -->
+                            {% buttons %}
+                            <div class="form-input rounded-buttons mt-20">
+                                <button type="submit" class="main-btn rounded-three">Enviar</button>
+                            </div> <!-- form input -->
+                            {% endbuttons %}
+                            {% bootstrap_messages %}
+                        </form>
+                    </div> <!-- contact form -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+
+
+
+
+
+
+
     {% bootstrap_javascript jquery='full' %}
 </body>
 
