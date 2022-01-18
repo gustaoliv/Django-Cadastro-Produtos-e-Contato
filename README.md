@@ -3,3 +3,34 @@ Projeto realizado aplicando melhorias e customizações no projeto Django2 do cu
 
 Propósito do Projeto: apenas aplicar conhecimetos adquiridos durante o curso para manipulação dos arquivos base do Django, e criando uma aplicação útil para divulgação de produtos.
 
+
+
+# Publicação no Heroku
+1. Login:
+```
+    heroku login 
+```
+
+2. Verificação da versão do Python:
+```
+python -V
+```
+3. Criação de um arquivo runtime.txt com a versão do Python referente:
+    
+    Ex: *python-3.10.1*
+
+4. Criação de um arquivo Procfile para configuração de execução no Heroku
+    
+    Conteúdo: *web: gunicorn django2.wsgi --log-file -*
+
+5. Adicionar arquivos ao git
+   
+6. Criação do projeto no Heroku:
+```
+heroku create django2-gustaoliv --buildpack heroku/python
+```
+7. Enviar os arquivos para o Heroku
+```
+git push heroku master
+```
+
