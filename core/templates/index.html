@@ -3,13 +3,113 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Index</title>
-    {% bootstrap_css %}
-    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Index</title>
+  {% bootstrap_css %}
+
+  <!--====== Required meta tags ======-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="Bootstrap, Landing page, Template, Registration, Landing">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/png">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+  <link rel="stylesheet" href="{% static 'css/line-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.theme.css' %}">
+  <link rel="stylesheet" href="{% static 'css/nivo-lightbox.css' %}">
+  <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+  <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+  <link rel="stylesheet" href="{% static 'css/color-switcher.css' %}">
+  <link rel="stylesheet" href="{% static 'css/menu_sideslide.css' %}">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">    
+  <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
 </head>
 <body>
-    <div class="container">
+    <!-- Header Section Start -->
+    <header id="slider-area">  
+      <nav class="navbar navbar-expand-md fixed-top scrolling-navbar bg-white">
+        <div class="container">          
+          <a class="navbar-brand" href="index.html"><span class="lni-bulb"></span>ESSENCE</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="lni-menu"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto w-100 justify-content-end">
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="http://127.0.0.1:8000/produto">Cadastrar Produtos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="http://127.0.0.1:8000/contato">Contato</a>
+              </li>  
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="http://127.0.0.1:8000/admin">Login</a>
+              </li>                            
+            </ul>              
+          </div>
+        </div>
+      </nav> 
+
+    <br><br><br>
+
+    <!-- Blog Section -->
+    <section id="blog" class="section">
+      <!-- Container Starts -->
+      <div class="container">
+        <div class="section-header">          
+          <h2 class="section-title">Nossos Produtos</h2>
+          <p class="section-subtitle">Alguns dos nossos produtos cadastrados.</p>
+        </div>
+        <div class="row">
+          {% for produto in produtos %}
+          <div class="col-lg-4 col-md-6 col-xs-12 blog-item">
+            <!-- Blog Item Starts -->
+            <div class="blog-item-wrapper">
+              <div class="blog-item-img">
+                <a href="#modal{{produto.id}}" data-toggle="modal">
+                  <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}">
+                </a>                
+              </div>
+              <div class="blog-item-text"> 
+                <div class="date"><i class="lni-calendar"></i>{{ produto.modificado }}</div>
+                <h3><a href="#modal{{produto.id}}" data-toggle="modal">{{ produto.nome }}</a></h3>
+                <div class="meta-tags">
+                  <span><i class="lni-tag"></i> R${{ produto.preco }}</a></span>
+                  <span><i class="lni-archive"></i> {{ produto.estoque }} un.</a></span>
+                </div>
+              </div>
+            </div>
+            <!-- Blog Item Wrapper Ends-->
+          </div>
+          <div class="modal fade bd-example-modal-lg show" id="modal{{produto.id}}" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="dynamic-content">
+                        <img src="{{ produto.imagem.url }}" class="img-fluid" alt="{{ produto.nome }}"/>
+                    </div>
+                </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    <!-- blog Section End -->
+
+
+
+
+
+    </header>
+    <!-- Header Section End --> 
+
+    <!-- <div class="container">
         {% if produtos %}
         <h1>Produtos</h1>
 
@@ -50,7 +150,7 @@
         {% else %}
             <h2>Ainda não existem produtos cadastrados. :(</h2>
         {% endif %}
-    </div>
+    </div> -->
 {% bootstrap_javascript jquery='full' %}
 </body>
 </html>
