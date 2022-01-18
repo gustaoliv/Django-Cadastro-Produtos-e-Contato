@@ -41,13 +41,13 @@
                 <a class="nav-link page-scroll" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link page-scroll" href="http://127.0.0.1:8000/produto">Cadastrar Produtos</a>
+                <a class="nav-link page-scroll" href="https://django2-gustaoliv.herokuapp.com/produto">Cadastrar Produtos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link page-scroll" href="http://127.0.0.1:8000/contato">Contato</a>
+                <a class="nav-link page-scroll" href="https://django2-gustaoliv.herokuapp.com/contato">Contato</a>
               </li>  
               <li class="nav-item">
-                <a class="nav-link page-scroll" href="http://127.0.0.1:8000/admin">Login</a>
+                <a class="nav-link page-scroll" href="https://django2-gustaoliv.herokuapp.com/admin">Login</a>
               </li>                            
             </ul>              
           </div>
@@ -56,7 +56,10 @@
 
     <br><br><br>
 
-    <!-- Blog Section -->
+
+    <!-- Products -->
+    {% if produtos %}
+
     <section id="blog" class="section">
       <!-- Container Starts -->
       <div class="container">
@@ -103,7 +106,11 @@
         </div>
       </div>
     </section>
-    <!-- blog Section End -->
+
+    {% else %}
+      <h2>Ainda não existem produtos cadastrados.</h2>
+    {% endif %}
+    <!-- Products end -->
 
 
 

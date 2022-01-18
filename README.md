@@ -4,8 +4,11 @@ Projeto realizado aplicando melhorias e customizações no projeto Django2 do cu
 Propósito do Projeto: apenas aplicar conhecimetos adquiridos durante o curso para manipulação dos arquivos base do Django, e criando uma aplicação útil para divulgação de produtos.
 
 
-
 # Publicação no Heroku
+A aplicação pode ser vista online no domínio: https://django2-gustaoliv.herokuapp.com/
+
+## Como publicar:
+
 1. Login:
 ```
     heroku login 
@@ -34,3 +37,7 @@ heroku create django2-gustaoliv --buildpack heroku/python
 git push heroku master
 ```
 
+8. Fazendo o migrate das tabelas para o heroku:
+```
+heroku run python manage.py migrate
+```
