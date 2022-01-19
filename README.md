@@ -7,7 +7,7 @@ Propósito do Projeto: apenas aplicar conhecimetos adquiridos durante o curso pa
 # Publicação no Heroku
 A aplicação pode ser vista online no domínio: https://django2-gustaoliv.herokuapp.com/
 
-**Obs**: Para acessar a página de cadastro de produtos é necessário estar logado.
+**Obs**: Para acessar a página de cadastro de produtos é necessário estar logado. O Heroku apaga as imagens feitas upload após alguns minutos, só as estáticas permanecem :/
 
 ## Como publicar:
 
